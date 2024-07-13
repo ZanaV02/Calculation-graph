@@ -68,7 +68,7 @@ public:
 		for (int i = 0;i < this->dimension.size();i++)
 		{
 			if (this->dimension.at(i) != other.dimension.at(i))
-				throw std::exception("Dimenzije tenzora nisu jednake!");
+				throw std::exception("Tensor dimensions are not equal!");
 		}
 
 		std::vector<T> rezultanteVrijednosti;
@@ -84,7 +84,7 @@ public:
 		for (int i = 0;i < this->dimension.size();i++)
 		{
 			if (this->dimension.at(i) != other.dimension.at(i))
-				throw std::exception("Dimenzije tenzora nisu jednake!"); 
+				throw std::exception("Tensor dimensions are not equal!"); 
 		}
 
 		std::vector<T> rezultanteVrijednosti;
@@ -100,7 +100,7 @@ public:
 		for (int i = 0;i < this->dimension.size();i++)
 		{
 			if (this->dimension.at(i) != other.dimension.at(i))
-				throw std::exception("Dimenzije tenzora nisu jednake!");
+				throw std::exception("Tensor dimensions are not equal!");
 		}
 
 		std::vector<T> rezultanteVrijednosti;
@@ -192,7 +192,7 @@ public:
 		}
 	}
 
-	Tensor<T, N...> deserialize(std::ifstream& file) //deserijalizacija
+	Tensor<T, N...> deserialize(std::ifstream& file) //deserijalization
 	{
 		if (file.is_open())
 		{
@@ -221,13 +221,13 @@ public:
 			}
 			if (values.size() != pom)
 			{
-				throw std::runtime_error("Dimenzije nisu iste!5");
+				throw std::runtime_error("Tensor dimensions are not equal!5");
 			}
 			return Tensor<T, N...>(values);
 		}
 		else
 		{
-			throw std::exception("Datoteka nije otvorena!");
+			throw std::exception("File is not opened!");
 		}
 	}
 };
@@ -260,7 +260,7 @@ public:
 		}
 		if (v2.size() != pom)
 		{
-			throw std::exception("Dimenzije nisu jednake!\n");
+			throw std::exception("Tensor dimensions are not equal!\n");
 		}
 	}
 	std::vector<int> getDimension()
@@ -303,7 +303,7 @@ public:
 		for (int i = 0;i < this->dimension.size();i++)
 		{
 			if (this->dimension.at(i) != other.dimension.at(i))
-				throw std::exception("Dimenzije tenzora nisu jednake!");
+				throw std::exception("Tensor dimensions are not equal!");
 		}
 
 		std::vector<T> rezultanteVrijednosti;
@@ -319,7 +319,7 @@ public:
 		for (int i = 0;i < this->dimension.size();i++)
 		{
 			if (this->dimension.at(i) != other.dimension.at(i))
-				throw std::exception("Dimenzije tenzora nisu jednake!");
+				throw std::exception("Tensor dimensions are not equal!");
 		}
 
 		std::vector<T> rezultanteVrijednosti;
@@ -335,7 +335,7 @@ public:
 		for (int i = 0;i < this->dimension.size();i++)
 		{
 			if (this->dimension.at(i) != other.dimension.at(i))
-				throw std::exception("Dimenzije tenzora nisu jednake!");
+				throw std::exception("Tensor dimensions are not equal!");
 		}
 
 		std::vector<T> rezultanteVrijednosti;
@@ -389,14 +389,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const Tensor<T>& tensor) //ispis na konzoli
 	{
 		if (tensor.dimension.size() == 0)
-			os << "Tenzor ne postoji!";
-		os << "Dimenzija: [ ";
+			os << "Tensor doesn't exist!";
+		os << "Dimension: [ ";
 		for (const auto& dim : tensor.dimension)
 		{
 			os << dim << " ";
 		}
 		os << "]\n";
-		os << "Tenzor: [ ";
+		os << "Tensor: [ ";
 		for (const auto& value : tensor.values)
 		{
 			os << value << " ";
@@ -405,7 +405,7 @@ public:
 		return os;
 	}
 
-	void serialize(std::ofstream& file) //serijalizacija
+	void serialize(std::ofstream& file) //serialization
 	{
 		if (file.is_open())
 		{
@@ -423,11 +423,11 @@ public:
 		}
 		else
 		{
-			throw std::exception("Datoteka nije otvorena!");
+			throw std::exception("File is not opened!");
 		}
 	}
 
-	Tensor<T> deserialize(std::ifstream& file) //deserijalizacija
+	Tensor<T> deserialize(std::ifstream& file) //deserialization
 	{
 		if (file.is_open())
 		{
@@ -455,19 +455,19 @@ public:
 			}
 			if (values.size() != pom)
 			{
-				throw std::runtime_error("Dimenzije nisu iste!5");
+				throw std::runtime_error("Tensor dimensions are not equal!5");
 			}
 			return Tensor<T>(dimension, values);
 		}
 		else
 		{
-			throw std::exception("Datoteka nije otvorena!");
+			throw std::exception("File is not opened!");
 		}
 	}
 };
 
 template <typename T, int ...N>
-void serialize(std::ofstream& file, Tensor<T, N...> t) //serijalizacija
+void serialize(std::ofstream& file, Tensor<T, N...> t) //serialization
 {
 	if (file.is_open())
 	{
@@ -490,7 +490,7 @@ void serialize(std::ofstream& file, Tensor<T, N...> t) //serijalizacija
 }
 
 template <typename T, int ...N>
-Tensor<T, N...> deserialize(std::ifstream& file) //deserijalizacija
+Tensor<T, N...> deserialize(std::ifstream& file) //deserialization
 {
 	if (file.is_open())
 	{
@@ -519,7 +519,7 @@ Tensor<T, N...> deserialize(std::ifstream& file) //deserijalizacija
 		}
 		if (values.size() != pom)
 		{
-			throw std::runtime_error("Dimenzije nisu iste!5");
+			throw std::runtime_error("Tensor dimensions are not equal!5");
 		}
 		return Tensor<T, N...>(values);
 	}
