@@ -102,11 +102,11 @@ int main()
         a.serializeGraph(file3);
         file1.close();
 
-        std::cout << "Deserijalizovan graf: " << std::endl;
+        std::cout << "Deserializated graph: " << std::endl;
         std::ifstream file4;
         file4.open("Graf.txt");
         Graph<int, 1, 2, 3> deserialized = a.deserializeGraph(file4);
-        std::cout << "Rezultujuci tenzor za cvor 9: \n" << deserialized.getResult(9);
+        std::cout << "Result tensor for node 9: \n" << deserialized.getResult(9);
         file4.close();
 
         std::cout << "=================================================" << std::endl;
