@@ -485,7 +485,7 @@ void serialize(std::ofstream& file, Tensor<T, N...> t) //serialization
 	}
 	else
 	{
-		throw std::exception("Datoteka nije otvorena!");
+		throw std::exception("File is not opened!");
 	}
 }
 
@@ -525,6 +525,6 @@ Tensor<T, N...> deserialize(std::ifstream& file) //deserialization
 	}
 	else
 	{
-		throw std::exception("Datoteka nije otvorena!");
+		throw std::exception("File is not opened!");
 	}
 }
